@@ -5,7 +5,6 @@ const consoleInput = readline.createInterface({
     output: process.stdout
 });
 
-// Country codes and neighbors
 const borderingCountries: Record<string, string[]> = {
     IN: ["Pakistan", "China", "Nepal", "Bhutan", "Bangladesh", "Myanmar"],
     US: ["Canada", "Mexico"],
@@ -39,7 +38,6 @@ function showNeighbors(code: string): void {
     neighbours.forEach(n => console.log("- " + n));
 }
 
-// Show list first
 console.log("Available country codes:");
 console.log(Object.keys(borderingCountries).join(", "));
 
