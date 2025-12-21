@@ -1,0 +1,3 @@
+The Employee class does not follow the Single Responsibility Principle. 
+It combines multiple responsibilities such as employee management, database operations, report generation in different formats, and business logic. 
+Because it has many reasons to change, the class becomes hard to maintain, test, and extend properly over time.
