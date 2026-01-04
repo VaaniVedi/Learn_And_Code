@@ -1,0 +1,18 @@
+{
+  "name": "tumblr-image-fetcher",
+  "version": "1.0.0",
+  "description": "Fetches images from Tumblr blogs using API v1 (Clean Code assignment)",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
