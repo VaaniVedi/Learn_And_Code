@@ -4,20 +4,20 @@ import * as fs from "fs";
 
 export class XmlExporter implements Exporter {
 
-    export(records: DataRecord[], filePath: string): void {
+  export(records: DataRecord[], filePath: string): void {
 
-        const xml = `
+    const xml = `
 <records>
-${records.map(r => `
+${records.map(record => `
   <record>
-    <id>${r.id}</id>
-    <name>${r.name}</name>
-    <value>${r.value}</value>
+    <id>${record.id}</id>
+    <name>${record.name}</name>
+    <value>${record.value}</value>
   </record>
 `).join("")}
 </records>
 `;
 
-        fs.writeFileSync(filePath, xml);
-    }
+    fs.writeFileSync(filePath, xml);
+  }
 }
