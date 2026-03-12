@@ -6,18 +6,24 @@ export class XmlExporter implements Exporter {
 
   export(records: DataRecord[], filePath: string): void {
 
-    const xml = `
-<records>
-${records.map(record => `
+    const recordXml = records.map((record) => {
+      return `
   <record>
     <id>${record.id}</id>
     <name>${record.name}</name>
     <value>${record.value}</value>
-  </record>
-`).join("")}
-</records>
-`;
+    <date>${record.date ?? ""}</date>
+    <doubledValue>${record.doubledValue ?? ""}</doubledValue>
+    <squaredValue>${record.squaredValue ?? ""}</squaredValue>
+  </record>`;
+    }).join("");
 
-    fs.writeFileSync(filePath, xml);
+    const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
+<records>
+${recordXml}
+</records>`;
+
+    fs.writeFileSync(filePath, xmlContent);
   }
 }
+
