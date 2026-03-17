@@ -1,66 +1,91 @@
 # Learn_And_Code
 This is a repository for L&amp;C Assignments
 
-# TypeScript Coding Guidelines
-
-These guidelines define the standards for writing clean, maintainable, and scalable TypeScript code.  
-They are based on Clean Code principles and industry best practices.
-
----
-
-## 1. Naming Conventions
-
-- Use `camelCase` for variables, functions, and parameters.
-- Use `PascalCase` for classes, interfaces, types, and enums.
-- Use `UPPER_SNAKE_CASE` for constants.
-- Use meaningful, intention-revealing names.
-- Boolean names should use prefixes like `is`, `has`, or `can`.
-- Avoid single-letter names except for loop indices.
-- Avoid ambiguous names such as `data`, `obj`, `temp`.
+# Coding Guidelines
+ 
+## 1. Naming
+- Use meaningful, readable, and searchable names.
+- Classes and files → `UpperCamelCase`
+- Methods, variables, parameters → `lowerCamelCase`
+- Constants → `UPPER_SNAKE_CASE`
+- Use consistent terminology across the codebase.
+- Boolean variables should use prefixes like `is`, `has`, or `can`.
+- Avoid ambiguous names such as `data`, `temp`, `obj`.
 
 ---
 
-## 2. Type Safety
+## 2. Functions
+- Keep functions small and focused (≤ 20–25 lines).
+- A function should perform one task only.
+- Use clear, descriptive function names.
+- Prefer fewer parameters; wrap many parameters in an object.
+- Avoid more than 2–3 parameters.
+- Follow the DRY principle.
+- Follow Command–Query Separation.
 
+---
+
+## 3. Comments
+- Prefer self-explanatory code over comments.
+- Use comments for intent, warnings, and TODOs.
+- Avoid redundant or outdated comments.
+- Do not leave commented-out code in the codebase.
+
+---
+
+## 4. Formatting
+ 
+### Vertical Formatting
+- Separate logical sections with blank lines.
+- Keep related code close together.
+- Place higher-level methods before helper methods.
+- End every file with a single newline.
+ 
+### Horizontal Formatting
+- Keep line length readable (≤ 100 characters).
+- No space between method name and parentheses.
+- Always use braces for `if`, `for`, and `while`.
+- Use consistent indentation (2 spaces).
+- Use single quotes for strings.
+- Always use semicolons.
+
+---
+
+## 5. Classes
+- One top-level class per file.
+- Each class should have a single responsibility.
+- Maintain high cohesion.
+- Avoid God classes.
+- Order members: constants → static fields → instance fields → constructors → public methods → private methods.
+
+---
+
+## 6. Type Safety (TypeScript)
 - Avoid using `any` unless absolutely necessary.
 - Define proper interfaces, types, and enums.
 - Use strict typing to ensure compile-time safety.
-- Prefer `readonly` properties where applicable.
+- Prefer `readonly` where applicable.
 - Use union types instead of hardcoded string values.
 
 ---
 
-## 3. Functions
-
-- Functions should be small and focused (≤ 20–25 lines).
-- A function should perform only one responsibility.
-- Avoid functions with more than 2–3 parameters.
-- Use parameter objects when more parameters are required.
-- Follow Command–Query Separation.
-- Ensure functions are easy to read and test.
+## 7. Objects and Data Structures
+- Objects encapsulate data and behavior.
+- Data structures expose data without behavior.
+- Avoid mixing both patterns.
 
 ---
 
-## 4. Classes and Modules
-
-- Follow the Single Responsibility Principle.
-- Keep classes small and focused.
-- Avoid God classes and large monolithic structures.
-- Prefer modular design with clear separation of concerns.
-- Organize code into logical modules.
-
----
-
-## 5. DRY Principle
-
-- Avoid duplication of logic across the codebase.
-- Extract reusable functionality into common modules.
-- Maintain a single source of truth for shared logic.
+## 8. Design Principles
+- Follow Single Responsibility Principle.
+- Open for extension, closed for modification.
+- Prefer small, focused interfaces.
+- Depend on abstractions rather than implementations.
+- Prefer composition over inheritance.
 
 ---
 
-## 6. Error Handling
-
+## 9. Error Handling
 - Handle errors explicitly and consistently.
 - Do not suppress or ignore errors.
 - Provide meaningful and descriptive error messages.
@@ -69,57 +94,24 @@ They are based on Clean Code principles and industry best practices.
 
 ---
 
-## 7. Formatting and Style
-
-- Use consistent formatting throughout the codebase.
-- Use 2 spaces for indentation.
-- Keep line length within 100 characters.
-- Use single quotes for strings.
-- Always use semicolons.
-- Maintain proper spacing between logical blocks.
-- Keep files reasonably small and readable.
-
----
-
-## 8. Avoid Bad Practices
-
+## 10. Avoid Bad Practices
 - Avoid global variables wherever possible.
 - Avoid magic numbers; use constants or enums.
 - Avoid hardcoding configuration values.
-- Do not leave commented-out code in the codebase.
 - Remove unused variables and imports.
+- Avoid unnecessary dependencies between modules.
 
 ---
 
-## 9. Interfaces and Abstraction
-
-- Prefer interfaces and abstractions over concrete implementations.
-- Follow Dependency Inversion Principle.
-- Design code to depend on abstractions rather than implementations.
-- Avoid exposing internal data structures directly.
-
----
-
-## 10. Modular Design
-
+## 11. Modular Design
+- Prefer modular design over monolithic code.
 - Break code into smaller, independent modules.
-- Ensure low coupling between modules.
-- Ensure high cohesion within modules.
-- Avoid unnecessary dependencies across modules.
-
----
-
-## 11. Comments
-
-- Write comments only when necessary.
-- Focus comments on intent and reasoning.
-- Avoid redundant or obvious comments.
-- Do not keep outdated or misleading comments.
+- Ensure low coupling and high cohesion.
+- Separate concerns clearly (services, parsers, validators, etc.).
 
 ---
 
 ## 12. Constants and Enums
-
 - Use constants for fixed values.
 - Use enums for related groups of values.
 - Avoid hardcoded strings and numbers in logic.
@@ -127,26 +119,20 @@ They are based on Clean Code principles and industry best practices.
 ---
 
 ## 13. Testing and Maintainability
-
 - Write code that is easy to test.
-- Ensure critical logic is covered by tests.
 - Avoid tightly coupled code.
+- Ensure important logic can be tested independently.
 
 ---
 
 ## 14. Refactoring
-
 - Refactor code when it becomes difficult to understand.
 - Continuously improve code quality.
-- Follow the Boy Scout Rule.
+- Follow the Boy Scout Rule: leave code better than you found it.
 
 ---
 
-## 15. General Principles
-
-- Readability is more important than conciseness.
-- Write code for humans, not just for machines.
-- Keep logic simple and avoid over-engineering.
-- Ensure code compiles without warnings or errors.
-
----
+## 15. PR Description
+- Problem statement should be mentioned in the description.
+- Every PR should include explanation of the solution.
+- Keep PRs focused on a single feature or fix.
