@@ -1,0 +1,6 @@
+Does this Book class follow SRP?  
+No, this Book class does not follow the Single Responsibility Principle (SRP).
+The reason is that it handles multiple responsibilities at the same time. 
+It is responsible for managing the book’s content (title, author, pages), handling pagination, tracking the physical location of the book in a library, and also saving the book to storage. 
+Each of these concerns can change for different reasons, so combining them into a single class makes the design hard to maintain. 
+According to SRP, a class should have only one reason to change, but this class has several, which violates the principle.
