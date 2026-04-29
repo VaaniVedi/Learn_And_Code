@@ -1,0 +1,3 @@
+In Git, a snapshot is like a full view of your project at a particular moment. Every commit captures this complete state of the project, which helps in tracking changes efficiently over time.
+
+Each commit not only saves the files as they are at that point but also includes extra details like the author, date, and commit message.
